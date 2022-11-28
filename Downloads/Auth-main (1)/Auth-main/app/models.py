@@ -8,7 +8,7 @@ class Customer(models.Model):
     email = models.CharField(max_length=200, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self): #This is so I don't see (object 1) I see the cutsomer's name
+    def __str__(self): #This is so I don't see (object 1) I see the customer name
         return self.name
 
 class Product(models.Model):
