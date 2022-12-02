@@ -16,7 +16,7 @@ def home(request):
 #Add Student Page
 def add_student(request):
     form = StudentForm(request.POST or None)
-    # customer = Student.objects.all()
+    # student = Student.objects.all()
     if form.is_valid():
         form.save()
     return render(request,"add.html", {"form":form})
@@ -28,18 +28,25 @@ def show_student(request):
 
 #Update Student's Info Page
 def update_student(request,pk):
-    student = Student.objects.get(id=pk)
-    form = StudentForm(request.POST, instance=student)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("update_student/<student_id>")
+    student = Student.objects.get(student_id=pk)
+    form = StudentForm(instance=student)
+    print("HEY")
+    if request.method == "POST":
+        print("Hi")
+        form = StudentForm(request.POST or None, instance=student)
+        print(form.is_valid())
+        if form.is_valid():
+            print("BYE")
+            form.save()
     return render(request,"update.html",{"student":student})
     
 #Delete Student's Page
 def delete_student(request,pk):
-    form = Student.objects.get(id=pk)
+    form = Student.objects.get(student_id=pk)
     form.delete()
-    return HttpResponseRedirect("/")
+    print(form)
+    context={"student":form}
+    return render(request, "add.html", context)
 
 
 #START OF Sign UP, LOGIN/OUT CODE

@@ -8,12 +8,12 @@
     <h4> Update Student Application</h4>
     <hr>
     
-    <form action="/show_student/update_student/{{student.id}}"method="POST">
+    <form action="" method="POST">
         {% csrf_token %} 
-        {% comment %} <div class="update-group">
+         <div class="update-group">
             <label for="">Student ID Number</label>
             <input type="text" name="student_id" value="{{student.student_id}}" class="form-control">
-        </div> {% endcomment %}
+        </div> 
 
         <div class="update-group">
             <label for="">Student Name</label>
