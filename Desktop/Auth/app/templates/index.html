@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{%block content%}
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link rel = "stylesheet" href= "{% static "styles.css"%}">
+    <!-- Bootstrap CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    
+
+<main>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-30">
+      <h1 class="display-4">Teacher Role Application</h1>
+      <p class="lead fw-normal">A application where a teacher can create, update and delete a student from a roster!</p>
+      <a class="btn btn-outline-secondary" href="http://127.0.0.1:8000/signup/">Click here to Register!</a>
+      {% comment %} <a class="btn btn-outline-secondary" href="http://127.0.0.1:8000/add/">Teacher's Dashboard</a> {% endcomment %}
+    </div>
+  </div>
+
+  
+  
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
+{% endblock %} 

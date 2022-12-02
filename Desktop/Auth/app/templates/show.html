@@ -1,0 +1,37 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h4> Student's Personal Details Application </h4>
+    <a href="{% url 'add_student' %}" class="btn btn-sm btn-info">Add New Student</a>
+    <a href="{% url 'home' %}" class="btn btn-sm btn-info">Home Page</a>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student's ID Number</th>
+                <th>Student's Name</th>
+                <th>Parent's Contact Information</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in student%}
+            <tr>
+                <td>{{s.student_id}}</td>
+                <td>{{s.student_name}}</td>
+                <td>{{s.student_contact}}</td>
+                <td>
+                    <a href="update_student/{{s.student_id}}" class="btn btn-sm btn-info">Update Student</a>
+                    <a href="delete_student/{{s.student_id}}" class="btn btn-sm btn-danger">Delete Student</a>
+                </td>
+            </tr>
+            {% endfor block %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
