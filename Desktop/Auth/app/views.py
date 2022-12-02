@@ -16,7 +16,7 @@ def home(request):
 #Add Student Page
 def add_student(request):
     form = StudentForm(request.POST or None)
-    # customer = Customer.objects.all()
+    # customer = Student.objects.all()
     if form.is_valid():
         form.save()
     return render(request,"add.html", {"form":form})
@@ -27,8 +27,8 @@ def show_student(request):
     return render(request,"show.html",{"student":student})
 
 #Update Student's Info Page
-def update_student(request,id):
-    student = Student.objects.get(student_id=id)
+def update_student(request,pk):
+    student = Student.objects.get(id=pk)
     form = StudentForm(request.POST, instance=student)
     if form.is_valid():
         form.save()
@@ -36,8 +36,8 @@ def update_student(request,id):
     return render(request,"update.html",{"student":student})
     
 #Delete Student's Page
-def delete_student(request,id):
-    form = Student.objects.get(id=id)
+def delete_student(request,pk):
+    form = Student.objects.get(id=pk)
     form.delete()
     return HttpResponseRedirect("/")
 

@@ -9,10 +9,10 @@
     
     <form action=""method="POST">
         {% csrf_token %} 
-        <div class="add-group">
+        {% comment %} <div class="add-group">
             <label for="">ID</label>
             <input type="text" name="student_id" class="form-control">
-        </div>
+        </div> {% endcomment %}
 
         <div class="add-group">
             <label for="">Name</label>

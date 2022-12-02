@@ -24,8 +24,8 @@ urlpatterns = [
     #Student Details
     path("add/", views.add_student, name="add_student"),
     path("show_student/", views.show_student, name= "show_student"),
-    path("show_student/update_student/<int:id>", views.update_student, name= "update_student"),
-    path("show_student/delete_student/<int:id>", views.delete_student, name= "delete_student"),
+    path("show_student/update_student/<int:pk>", views.update_student, name= "update_student"),
+    path("show_student/delete_student/<int:pk>", views.delete_student, name= "delete_student"),
     #Sign up and in
     path('signup/', views.sign_up, name="signup"),
     path('signin/', views.sign_in, name="signin"),

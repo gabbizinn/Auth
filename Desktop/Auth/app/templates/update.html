@@ -1,6 +1,6 @@
 <!doctype html>{% load static %}
-
-{% extends 'base.html' %}
+{% comment %} 
+{% extends 'base.html' %} {% endcomment %}
 
 {% block content %}
 
@@ -8,12 +8,12 @@
     <h4> Update Student Application</h4>
     <hr>
     
-    <form action="/update_student/{{student.id}}"method="POST">
+    <form action="/show_student/update_student/{{student.id}}"method="POST">
         {% csrf_token %} 
-        <div class="update-group">
+        {% comment %} <div class="update-group">
             <label for="">Student ID Number</label>
             <input type="text" name="student_id" value="{{student.student_id}}" class="form-control">
-        </div>
+        </div> {% endcomment %}
 
         <div class="update-group">
             <label for="">Student Name</label>
